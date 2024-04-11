@@ -10,11 +10,7 @@ const Home = () => {
     <Navbar />
     <MyCombobox />
     <Title/>
-    <div className="flex justify-center flex-wrap">
      <CardImmobile  /> 
-     <CardImmobile  />
-     <CardImmobile  />
-    </div>
     </>
   );
 }

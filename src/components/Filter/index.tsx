@@ -15,7 +15,7 @@ export default function Example() {
   const [selected, setSelected] = useState(Bairro[0])
 
   return (
-    <div className="fixed right-80 mb-8 w-72">
+    <div className="absolute right-80 mb-8 w-72">
         <h1 className='text-sm mt-2 mb-2 font-semibold'>Selecione o bairro</h1>
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative mt-1">
