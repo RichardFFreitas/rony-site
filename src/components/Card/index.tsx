@@ -18,7 +18,8 @@ import { BiBath, BiBed, BiCar, BiLogoWhatsapp } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 
-import getResidenceData from "../../services/api"
+import getResidenceData from "../../services/api";
+import Loading from "@/routes/Loading";
 
 interface Residence {
   ID: number;
@@ -37,17 +38,16 @@ interface Residence {
   Foto3: string;
 }
 
-
 function CardImmobile() {
   const [residences, setResidences] = useState<Residence[]>([]);
-
-  
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchResidences = async () =>{
+    const fetchResidences = async () => {
       const residenceData = await getResidenceData();
-      setResidences(residenceData)
-    }
+      setResidences(residenceData);
+      setLoading(false);
+    };
     fetchResidences();
   }, []);
 
@@ -58,17 +58,29 @@ function CardImmobile() {
     }).format(price);
   }
 
-  function getVariant(Disponibilidade: string):"avaible" | "unvaible" | "alocate"   {
+  function getVariant(
+    Disponibilidade: string
+  ): "avaible" | "unvaible" | "alocate" {
     switch (Disponibilidade) {
       case "Disponivel":
         return "avaible";
       case "Vendido":
         return "unvaible";
-      case "Indisponivel":
+      case "Indisponível":
         return "alocate";
       default:
         return "avaible";
     }
+  }
+
+  if (loading) {
+    return (
+      <>
+        <div className="flex  items-center justify-center">
+          <Loading />
+        </div>
+      </>
+    );
   }
 
   return (
@@ -76,7 +88,7 @@ function CardImmobile() {
       {residences
         .filter((residence) => Object.keys(residence).length !== 0)
         .map((residence) => (
-          <Card key={residence.ID} className="m-4 mt-8 w-[32rem] h-[38rem]">
+          <Card key={residence.ID} className="m-4 mt-2 w-[32rem] h-[38rem]">
             <CardHeader>
               <CardTitle>{residence?.Tipo}</CardTitle>
               <CardDescription>{residence?.Bairro}</CardDescription>
@@ -115,7 +127,10 @@ function CardImmobile() {
                 <Badge variant={"secondary"} className="type mr-4">
                   {residence?.Acomodacao}
                 </Badge>
-                <Badge variant={getVariant(residence.Disponibilidade)} className="avaible mr-4">
+                <Badge
+                  variant={getVariant(residence.Disponibilidade)}
+                  className="avaible mr-4"
+                >
                   {residence?.Disponibilidade}
                 </Badge>
               </div>
