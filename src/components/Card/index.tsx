@@ -88,10 +88,15 @@ function CardImmobile() {
       {residences
         .filter((residence) => Object.keys(residence).length !== 0)
         .map((residence) => (
-          <Card key={residence.ID} className="sm:m-4 sm:mt-2 sm:w-[32rem] sm:h-[38rem] w-96 mt-6">
+          <Card
+            key={residence.ID}
+            className="sm:m-4 sm:mt-2 sm:w-[32rem] sm:h-[38rem] w-96 mt-6"
+          >
             <CardHeader>
               <CardTitle>{residence?.Tipo}</CardTitle>
-              <CardDescription>{residence?.Bairro}</CardDescription>
+              <CardDescription>
+                {residence?.Bairro}/{residence?.Endereco}
+              </CardDescription>
             </CardHeader>
             <CardContent className="p-0 mt-1 sm:mt-0 sm:pt-0">
               <Carousel className="sm:w-92 sm:h-40 sm:mx-auto sm:text-center">
@@ -99,43 +104,46 @@ function CardImmobile() {
                   <CarouselItem className="">
                     {residence?.Foto1 ? (
                       <img
-                      className="size-[24rem] w-[32rem]"
-                      src={residence?.Foto1}
-                      alt="slide photo 1"
-                    />
+                        className="size-[24rem] w-[32rem]"
+                        src={residence?.Foto1}
+                        alt="slide photo 1"
+                      />
                     ) : (
                       <img
-                      className="size-[24rem] w-[32rem]" 
-                      src="/no-image.png" 
-                      alt="No image" />
+                        className="size-[24rem] w-[32rem]"
+                        src="/no-image.png"
+                        alt="No image"
+                      />
                     )}
                   </CarouselItem>
                   <CarouselItem>
-                  {residence?.Foto2 ? (
+                    {residence?.Foto2 ? (
                       <img
-                      className="size-[24rem] w-[32rem]"
-                      src={residence?.Foto2}
-                      alt="slide photo 1"
-                    />
+                        className="size-[24rem] w-[32rem]"
+                        src={residence?.Foto2}
+                        alt="slide photo 1"
+                      />
                     ) : (
                       <img
-                      className="size-[24rem] w-[32rem]" 
-                      src="/no-image.png" 
-                      alt="No image" />
+                        className="size-[24rem] w-[32rem]"
+                        src="/no-image.png"
+                        alt="No image"
+                      />
                     )}
                   </CarouselItem>
                   <CarouselItem>
-                  {residence?.Foto3 ? (
+                    {residence?.Foto3 ? (
                       <img
-                      className="size-[24rem] w-[32rem]"
-                      src={residence?.Foto3}
-                      alt="slide photo 1"
-                    />
+                        className="size-[24rem] w-[32rem]"
+                        src={residence?.Foto3}
+                        alt="slide photo 1"
+                      />
                     ) : (
                       <img
-                      className="size-[24rem] w-[32rem]" 
-                      src="/no-image.png" 
-                      alt="No image" />
+                        className="size-[24rem] w-[32rem]"
+                        src="/no-image.png"
+                        alt="No image"
+                      />
                     )}
                   </CarouselItem>
                 </CarouselContent>

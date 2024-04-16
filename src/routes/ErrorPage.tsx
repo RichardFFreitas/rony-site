@@ -4,7 +4,7 @@ const ErrorPage = () => {
     <section className="px-4 py-32 mx-auto max-w-7xl">
   <div className="w-full mx-auto lg:w-1/3">
     <Link to="/" title="Voltar a tela inicial" className="flex items-center">
-      <img src="src/assets/r.png" alt="" />
+      <img src="/r.png" alt="" />
       <span className="sr-only">Rony Batista Home Page</span>
     </Link>
     <p className="mt-5 mb-3 text-xl font-bold text-white md:text-2xl">Página não encontrada (404)</p>
