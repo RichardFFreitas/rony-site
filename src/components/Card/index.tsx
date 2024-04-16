@@ -106,7 +106,7 @@ function CardImmobile() {
                     ) : (
                       <img
                       className="size-[24rem] w-[32rem]" 
-                      src="src/assets/no-image.png" 
+                      src="/no-image.png" 
                       alt="No image" />
                     )}
                   </CarouselItem>
@@ -120,7 +120,7 @@ function CardImmobile() {
                     ) : (
                       <img
                       className="size-[24rem] w-[32rem]" 
-                      src="src/assets/no-image.png" 
+                      src="/no-image.png" 
                       alt="No image" />
                     )}
                   </CarouselItem>
@@ -134,7 +134,7 @@ function CardImmobile() {
                     ) : (
                       <img
                       className="size-[24rem] w-[32rem]" 
-                      src="src/assets/no-image.png" 
+                      src="/no-image.png" 
                       alt="No image" />
                     )}
                   </CarouselItem>

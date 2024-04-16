@@ -37,7 +37,7 @@ export default function Nav() {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
-                    src="src/assets/r.png"
+                    src="/r.png"
                     alt="Rony Batista"
                   />
                 </div>
@@ -69,7 +69,7 @@ export default function Nav() {
                   <div className='relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"'>
                     <img
                       className="h-8 w-8 rounded-full"
-                      src="src/assets/Rony.jpg"
+                      src="/Rony.jpg"
                       alt=""
                     />
                   </div>
