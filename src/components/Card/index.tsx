@@ -88,42 +88,63 @@ function CardImmobile() {
       {residences
         .filter((residence) => Object.keys(residence).length !== 0)
         .map((residence) => (
-          <Card key={residence.ID} className="m-4 mt-2 w-[32rem] h-[38rem]">
+          <Card key={residence.ID} className="md:m-4 md:mt-2 md:w-[32rem] md:h-[38rem] w-96 mt-6">
             <CardHeader>
               <CardTitle>{residence?.Tipo}</CardTitle>
               <CardDescription>{residence?.Bairro}</CardDescription>
             </CardHeader>
-            <CardContent className="p-0 mt-12 sm:mt-0 sm:pt-0">
-              <Carousel className="w-92 h-40    mx-auto text-center">
+            <CardContent className="p-0 mt-1 sm:mt-0 sm:pt-0">
+              <Carousel className="sm:w-92 sm:h-40 sm:mx-auto sm:text-center">
                 <CarouselContent>
-                  <CarouselItem className="rounded-md ">
-                    <img
+                  <CarouselItem className="">
+                    {residence?.Foto1 ? (
+                      <img
                       className="size-[24rem] w-[32rem]"
                       src={residence?.Foto1}
                       alt="slide photo 1"
                     />
+                    ) : (
+                      <img
+                      className="size-[24rem] w-[32rem]" 
+                      src="src/assets/no-image.png" 
+                      alt="No image" />
+                    )}
                   </CarouselItem>
                   <CarouselItem>
-                    <img
+                  {residence?.Foto2 ? (
+                      <img
                       className="size-[24rem] w-[32rem]"
                       src={residence?.Foto2}
-                      alt="slide photo 2"
+                      alt="slide photo 1"
                     />
+                    ) : (
+                      <img
+                      className="size-[24rem] w-[32rem]" 
+                      src="src/assets/no-image.png" 
+                      alt="No image" />
+                    )}
                   </CarouselItem>
                   <CarouselItem>
-                    <img
+                  {residence?.Foto3 ? (
+                      <img
                       className="size-[24rem] w-[32rem]"
                       src={residence?.Foto3}
-                      alt="slide photo 3"
+                      alt="slide photo 1"
                     />
+                    ) : (
+                      <img
+                      className="size-[24rem] w-[32rem]" 
+                      src="src/assets/no-image.png" 
+                      alt="No image" />
+                    )}
                   </CarouselItem>
                 </CarouselContent>
                 <CarouselPrevious />
                 <CarouselNext />
               </Carousel>
             </CardContent>
-            <CardFooter className="block sm:mt-60 mt-48 ">
-              <div className={`flex flex-row-reverse`}>
+            <CardFooter className="block sm:mt-60 mt-4 ">
+              <div className="flex flex-row-reverse">
                 <Badge variant={"secondary"} className="type mr-4">
                   {residence?.Acomodacao}
                 </Badge>
@@ -134,7 +155,7 @@ function CardImmobile() {
                   {residence?.Disponibilidade}
                 </Badge>
               </div>
-              <div className="flex ml-2 ">
+              <div className="flex sm:ml-2">
                 <span className="mr-2 flex items-center">
                   <BiBath className="mr-1" /> <b>{residence?.Banheiros}</b>
                 </span>
@@ -145,13 +166,13 @@ function CardImmobile() {
                   <BiCar className="mr-1" /> <b>{residence?.Garagem}</b>
                 </span>
               </div>
-              <div className="flex items-center space-x-44">
+              <div className="flex items-center sm:space-x-44 space-x-8">
                 <a href="https://wa.link/0e3hn1">
                   <Button type="button" className="mt-2" variant={"outline"}>
                     <BiLogoWhatsapp className="mr-4" /> Agende uma visita
                   </Button>
                 </a>
-                <span className="mr-4 font-bold">
+                <span className="sm:mr-4 font-bold  ">
                   Preço: {formatPrice(residence?.Preco)}
                 </span>
               </div>
