@@ -12,7 +12,7 @@ const Sobre = () => {
       <div className="flex place-content-center flex-wrap items-center">
         <img
           className="rounded-full w-64 md:w-96"
-          src="src/assets/Rony.jpg"
+          src="/Rony.jpg"
           alt="Rony"
         />
         <div className="w-full md:w-1/2 md:px-4 md:ml-12 ml-4">
