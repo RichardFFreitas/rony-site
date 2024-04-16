@@ -1,4 +1,5 @@
 import { Separator } from "../ui/separator";
+
 const Title = () => {
   return (
     <div className="text-center mx-auto mt-20">

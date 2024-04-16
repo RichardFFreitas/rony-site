@@ -11,7 +11,7 @@ const Bairro = [
   { name: 'Cabo Frio' },
 ]
 
-export default function Example() {
+export default function Filter() {
   const [selected, setSelected] = useState(Bairro[0])
 
   return (
