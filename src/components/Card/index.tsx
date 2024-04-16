@@ -88,7 +88,7 @@ function CardImmobile() {
       {residences
         .filter((residence) => Object.keys(residence).length !== 0)
         .map((residence) => (
-          <Card key={residence.ID} className="md:m-4 md:mt-2 md:w-[32rem] md:h-[38rem] w-96 mt-6">
+          <Card key={residence.ID} className="sm:m-4 sm:mt-2 sm:w-[32rem] sm:h-[38rem] w-96 mt-6">
             <CardHeader>
               <CardTitle>{residence?.Tipo}</CardTitle>
               <CardDescription>{residence?.Bairro}</CardDescription>
@@ -166,13 +166,13 @@ function CardImmobile() {
                   <BiCar className="mr-1" /> <b>{residence?.Garagem}</b>
                 </span>
               </div>
-              <div className="flex items-center sm:space-x-44 space-x-8">
+              <div className="flex items-center sm:space-x-44 space-x-8 ">
                 <a href="https://wa.link/0e3hn1">
                   <Button type="button" className="mt-2" variant={"outline"}>
                     <BiLogoWhatsapp className="mr-4" /> Agende uma visita
                   </Button>
                 </a>
-                <span className="sm:mr-4 font-bold  ">
+                <span className="sm:mr-4 font-bold">
                   Preço: {formatPrice(residence?.Preco)}
                 </span>
               </div>
